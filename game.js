@@ -56,9 +56,9 @@ function checkAnswer(currentLevel) {
     $(".btn-start").show();
 
     if ((gamePattern.length - 1) > topScore) {
-      $("#level-title").text("New Topscore! Press Any Key to Restart");
+      $("#level-title").text("New Highscore! Press Any Key to Restart");
       topScore = gamePattern.length - 1;
-      $('#top-score').text("Topscore: " + (gamePattern.length - 1));
+      $('#high-score').text("Highscore: " + (gamePattern.length - 1));
     }
 
     startOver();
