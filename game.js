@@ -8,21 +8,11 @@ var level = 0;
 var topScore = 0;
 
 $(document).keypress(function() {
-  if (!gameStarted) {
-    $('#level-title').text("Level " + level);
-    nextSequence();
-    gameStarted = true;
-    $(".btn-start").hide();
-  }
+  start();
 });
 
 $(".btn-start").click(function() {
-  if (!gameStarted) {
-    $('#level-title').text("Level " + level);
-    nextSequence();
-    gameStarted = true;
-    $(".btn-start").hide();
-  }
+  start();
 })
 
 $(".btn").click(function() {
@@ -34,6 +24,15 @@ $(".btn").click(function() {
 
   checkAnswer(userClickedPattern.length - 1);
 });
+
+function start() {
+  if (!gameStarted) {
+    $('#level-title').text("Level " + level);
+    nextSequence();
+    gameStarted = true;
+    $(".btn-start").hide();
+  }
+}
 
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
@@ -57,6 +56,8 @@ function checkAnswer(currentLevel) {
     $(".btn-start").show();
 
     if ((gamePattern.length - 1) > topScore) {
+      $("#level-title").text("New Topscore! Press Any Key to Restart");
+      topScore = gamePattern.length - 1;
       $('#top-score').text("Topscore: " + (gamePattern.length - 1));
     }
 
