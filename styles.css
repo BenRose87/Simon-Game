@@ -47,7 +47,23 @@ body {
   background-color: yellow;
 }
 
+.btn-start {
+  background-color: purple;
+  border-radius: 15%;
+  border: 10px solid black;
+  display: inline-block;
+  height: 200px;
+  margin: 25px;
+  width: 400px;
+}
+
+.start-text {
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+}
+
 .pressed {
-  box-shadow: 0 0 20px white;
   background-color: grey;
+  box-shadow: 0 0 20px white;
 }
